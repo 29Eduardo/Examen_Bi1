@@ -1,0 +1,52 @@
+@startuml
+class Estudiante {
+    - nombre : String
+    - edad : int
+    + mostrarDatos() : String
+    + validarEdad() : int
+}
+
+class Docente {
+    - nombre : String
+    - especialidad : String
+    + mostrarPerfil(): String
+}
+
+abstract class Curso {
+    # nombre : String
+    # duracion : String
+    # precio : double
+    # docente : Docente
+    + mostrarInformacion() : String
+    + asignarDocente(String Docente) : String
+}
+
+class CursoRegular {
+
+    + mostarResume() : void
+}
+class CursoCertificado {
+    + calcularPrecioFinal() : double
+    + mostrarResumen() : void
+    - certificado : String
+}
+class Matricula {
+    - estudiante : Estudiante
+    - curso : Curso
+    - evaluacion : Evaluacion
+    + registrarEvaluacion(double) : void
+    + mostrarDetalle() : void
+}
+class Evaluacion {
+    - nota : double
+    + getResultado() : void
+}
+
+
+Curso <|-- CursoRegular
+Curso <|-- CursoCertificado
+Curso *-- Docente
+Docente *--  Evaluacion
+Estudiante *-- Matricula
+Matricula *-- Curso
+@enduml
