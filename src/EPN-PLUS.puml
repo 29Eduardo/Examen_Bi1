@@ -41,8 +41,6 @@ class Evaluacion {
     - nota : double
     + getResultado() : void
 }
-
-
 Curso <|-- CursoRegular
 Curso <|-- CursoCertificado
 Curso *-- Docente
