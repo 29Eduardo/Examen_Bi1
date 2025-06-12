@@ -11,7 +11,6 @@ public class Docente {
 
     public String getNombre() { return nombre; }
     public String getEspecialidad() { return especialidad; }
-
     public void  mostrarPerfil(){
         System.out.println("Nombre: " + nombre);
         System.out.println("Especialidad: " + especialidad);
